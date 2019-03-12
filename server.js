@@ -2,6 +2,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
 
+var port = process.env.PORT || 8080;
+
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true })); 
 
@@ -24,8 +26,8 @@ app.post("/getRate", function(req, res) {
     res.render("results", params);
 });
 
-app.listen(5000, function() {
-    console.log("Ther server is on port 5000");
+app.listen(port, function() {
+    console.log("The server is on port 8080");
 });
 
 
